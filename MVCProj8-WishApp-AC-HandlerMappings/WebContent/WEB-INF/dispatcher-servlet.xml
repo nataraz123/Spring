@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+   <!-- Handler mapping -->
+   <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/> 
+     
+     
+     <bean  class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+         <property name="mappings">
+             <props>
+                <prop key="home.htm">shc1</prop>
+               <!--  <prop key="wish.htm">wmgc</prop>
+                <prop key="about_us.htm">auc</prop>
+                <prop key="contact_us.htm">cuc</prop> -->
+             </props>
+         </property>
+    </bean> 
+    
+     
+    
+    <!-- Contrllors -->
+   <!--  <bean id="/home.htm"  class="com.nt.controller.ShowHomeController"/>
+     <bean id="/wish.htm"  class="com.nt.controller.WishMessageGeneratorController"/>
+     <bean id="/about_us.htm"   class="com.nt.controller.AboutUsController"/>   
+     <bean id="/contact_us.htm"  class="com.nt.controller.ContactUsController"/>
+      -->
+      
+     <!--   <bean id="shc"  class="com.nt.controller.ShowHomeController"/>
+     <bean id="wmgc"  class="com.nt.controller.WishMessageGeneratorController"/>
+     <bean id="auc"   class="com.nt.controller.AboutUsController"/>   
+     <bean id="cuc"  class="com.nt.controller.ContactUsController"/> -->
+     
+     <bean    class="com.nt.controller.ShowHomeController"/>
+     <bean id="shc1"   class="com.nt.controller.ShowHomeController1"/>
+      <bean id="/showhome.htm"   class="com.nt.controller.ShowHomeController2"/>
+      
+      
+     <bean   class="com.nt.controller.WishMessageGeneratorController"/>
+     <bean    class="com.nt.controller.AboutUsController"/>   
+     <bean   class="com.nt.controller.ContactUsController"/>
+      
+      
+    <!-- ViewResolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+       <property name="prefix" value="/WEB-INF/pages/"/>
+       <property name="suffix"  value=".jsp"/>
+    </bean>
+
+</beans>
