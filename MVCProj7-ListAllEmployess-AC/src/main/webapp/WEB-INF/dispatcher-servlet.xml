@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  <!-- Handler Mapping -->
+  <bean  class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+      <property name="mappings">
+          <props>
+             <prop key="welcome.htm">pvc</prop>
+             <prop key="list_emps.htm">lec</prop>
+         </props>
+      </property>
+  </bean>
+  
+  <!-- Controllers cfg -->
+  <bean id="pvc"  class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+     <property name="viewName" value="home"/>
+  </bean>
+  
+  <bean id="lec"  class="com.nt.controller.ListEmployeesController">
+     <constructor-arg ref="empService"/>
+  </bean>
+  
+  
+  <!-- ViewResolver -->
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix"  value="/WEB-INF/pages/"/>
+      <property name="suffix"  value=".jsp"/>
+  </bean>
+
+</beans>
