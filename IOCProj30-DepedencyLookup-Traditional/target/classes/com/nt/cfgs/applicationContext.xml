@@ -10,7 +10,7 @@
     <bean id="phone"  class="com.nt.beans.MobilePhone">
        <!-- <property name="beanId"  value="charger2"/> -->
        <property name="beanId">
-           <idref  bean="charger"/>
+           <idref  bean="charger1"/>
        </property>
     </bean>
 
