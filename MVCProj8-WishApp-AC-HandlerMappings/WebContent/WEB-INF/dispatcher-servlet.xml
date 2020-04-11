@@ -4,20 +4,26 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
    <!-- Handler mapping -->
-   <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/> 
-     
-     
-     <bean  class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+   <bean  class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+       <property name="order"  value="10"/>
          <property name="mappings">
              <props>
-                <prop key="home.htm">shc1</prop>
+                <prop key="showhome.htm">shc1</prop>
                <!--  <prop key="wish.htm">wmgc</prop>
                 <prop key="about_us.htm">auc</prop>
                 <prop key="contact_us.htm">cuc</prop> -->
              </props>
          </property>
     </bean> 
+   <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+      <property name="order"  value="1"/>
+   </bean>
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+       <property name="order"  value="5"/>
+    </bean> 
+     
+     
+     
     
      
     
