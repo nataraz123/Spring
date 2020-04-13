@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+   <bean id="home"  class="org.springframework.web.servlet.view.InternalResourceView">
+      <property name="url"  value="/WEB-INF/pages/onakkam.jsp"/>
+   </bean>
+   
+   <bean id="result"  class="org.springframework.web.servlet.view.JstlView">
+       <property name="url"  value="/WEB-INF/pages/output.jsp"/>
+   </bean>
+   
+   <bean id="about_us"  class="org.springframework.web.servlet.view.InternalResourceView">
+      <property name="url"  value="/WEB-INF/pages1/know_me.jsp"/>
+   </bean>
+   
+   <bean id="contact_us"  class="org.springframework.web.servlet.view.JstlView">
+      <property name="url"  value="/WEB-INF/pages1/ping_me.jsp"/>
+   </bean>
+
+</beans>

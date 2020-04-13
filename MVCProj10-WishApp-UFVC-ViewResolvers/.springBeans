@@ -9,6 +9,7 @@
 	<configs>
 		<config>WebContent/WEB-INF/dispatcher-servlet.xml</config>
 		<config>WebContent/WEB-INF/myCfg.xml</config>
+		<config>WebContent/WEB-INF/views.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

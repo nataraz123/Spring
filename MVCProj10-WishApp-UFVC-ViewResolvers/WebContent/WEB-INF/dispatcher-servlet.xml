@@ -35,13 +35,23 @@
              <property name="suffix" value=".jsp"/>
       </bean> -->
     
-    <!--  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-           <property name="prefix" value="/WEB-INF/pages/"/>
-       <property name="suffix"  value=".jsp"/>
-    </bean>  -->
     
     <bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
         <property name="basename"  value="com/nt/commons/views"/>
+    </bean> 
+    
+    
+    <bean  class="org.springframework.web.servlet.view.XmlViewResolver">
+         <property name="location"  value="/WEB-INF/views.xml"/>
     </bean>
+    
+      <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+           <property name="prefix" value="/WEB-INF/pages/"/>
+       <property name="suffix"  value=".jsp"/>
+    </bean> 
+    
+   
+    
+    
 
 </beans>
