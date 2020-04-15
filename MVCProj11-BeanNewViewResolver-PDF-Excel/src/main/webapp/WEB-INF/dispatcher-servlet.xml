@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+    
+    <!-- HandlerMapping -->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+      <property name="mappings">
+           <props>
+              <prop key="welcome.htm">pvc</prop>
+              <prop key="report.htm">src</prop>
+           </props>
+      </property>
+    </bean>
+    
+    <!-- Controllers -->
+     <bean id="pvc"  class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+         <property name="viewName"  value="home"/>
+     </bean>
+     
+     <bean id="src" class="com.nt.controller.StudentReportController"/>
+     
+     <!-- View classes cfg -->
+       <bean id="excelView"   class="com.nt.view.StudentExcelView"/>
+     <bean id="pdfView"  class="com.nt.view.StudentPdfView"/>
+     <!-- ViewResolver -->
+       <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+       
+       <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix"  value="/WEB-INF/pages/"/>
+        <property name="suffix"  value=".jsp"/>
+     </bean>
+
+</beans>
