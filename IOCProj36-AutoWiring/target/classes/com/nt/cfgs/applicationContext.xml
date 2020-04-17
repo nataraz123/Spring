@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans default-autowire="constructor"  default-autowire-candidates="tp2,tp1,tp" xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
   <!-- dependent beans cfg -->
-   <bean id="tp"  class="com.nt.beans.TourPlan">
+   <bean id="tp"  class="com.nt.beans.TourPlan"  autowire-candidate="default" >
        <property name="places">
-           <array>
+           <list>
               <value>Ooty</value>
               <value>K.canal</value>
               <value>MunnarHills</value>
-           </array>
+           </list>
        </property>
    </bean>
    
-   <bean id="tp1"  class="com.nt.beans.TourPlan">
+    <bean id="tp1"  class="com.nt.beans.TourPlan" primary="true" >
        <property name="places">
-           <array>
+           <list>
               <value>Goa</value>
               <value>Manglore</value>
               <value>pondichery</value>
-           </array>
+           </list>
        </property>
-   </bean>
+   </bean> 
    
    <!-- target bean cfg -->
-    <bean id="agent"  class="com.nt.beans.TravelAgent"  autowire="byName"/>
+    <bean id="agent"  class="com.nt.beans.TravelAgent"  autowire="constructor"/>
+    
+    
        
     
 
