@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans default-autowire="constructor"  default-autowire-candidates="tp2,tp1,tp" xmlns="http://www.springframework.org/schema/beans"
+<beans default-autowire="constructor"   xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
   <!-- dependent beans cfg -->
-   <bean id="tp"  class="com.nt.beans.TourPlan"  autowire-candidate="default" >
+   <bean id="tp"  class="com.nt.beans.TourPlan"     >
        <property name="places">
            <list>
               <value>Ooty</value>
@@ -24,7 +24,11 @@
    </bean> 
    
    <!-- target bean cfg -->
-    <bean id="agent"  class="com.nt.beans.TravelAgent"  autowire="constructor"/>
+    <bean id="agent"  class="com.nt.beans.TravelAgent"  autowire="constructor">
+      <property name="tp" ref="tp"/>
+    </bean>
+   
+   
     
     
        
