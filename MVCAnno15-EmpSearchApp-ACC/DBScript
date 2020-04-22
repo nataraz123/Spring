@@ -1,0 +1,2 @@
+(select empno,ename,job,sal,deptno,mgr from emp where (empno is not null and empno=7499) or  (ename is not null  and ename like 'S%') or (job is not null  and job like 'C%') or
+  2  (sal is not null and sal >=1500));
