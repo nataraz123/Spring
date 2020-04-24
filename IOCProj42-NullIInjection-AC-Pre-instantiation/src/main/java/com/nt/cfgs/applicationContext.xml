@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+  
+    <bean id="doj" name="doj1"  class="java.util.Date"  scope="prototype">
+          <property name="year" value="115"/>
+          <property name="month" value="11"/>
+          <property name="date" value="12"/>
+          
+    </bean>
+    
+    
+     <bean id="dob"  class="java.util.Date"  scope="prototype">
+          <property name="year" value="95"/>
+          <property name="month" value="3"/>
+          <property name="date" value="11"/>
+          
+    </bean>
+    
+    <bean id="dom"  class="java.util.Date">
+          <property name="year" value="117"/>
+          <property name="month" value="11"/>
+          <property name="date" value="12"/>
+    </bean>
+    
+    
+  
+  
+   <!--  Spring bean cfg -->
+   <bean id="rajaProfile" name="rp,kingProfile"  class="com.nt.beans.PersonProfile"  lazy-init="false"  >
+     <constructor-arg  value="4234324324"/>
+     <constructor-arg  value="raja"/>
+     <constructor-arg  value="23.5f"/>
+     <constructor-arg> <null/></constructor-arg>
+     <constructor-arg  ref="doj1"/>
+     <constructor-arg  ref="dom"/>   
+   </bean>
+   
+    <!--  Spring bean cfg -->
+   <bean id="raniProfile"   class="com.nt.beans.PersonProfile"  lazy-init="default">
+     <constructor-arg  value="42343454324"/>
+     <constructor-arg  value="rani"/>
+     <constructor-arg  value="18.5f"/>
+     <constructor-arg ref="dob"/> 
+     <constructor-arg  ref="doj"/>
+     <constructor-arg  ><null/>  </constructor-arg>   
+   </bean>
+   
+    
+
+</beans>
