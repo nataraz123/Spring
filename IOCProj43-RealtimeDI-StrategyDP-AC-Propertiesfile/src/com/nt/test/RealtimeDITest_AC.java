@@ -53,7 +53,7 @@ public class RealtimeDITest_AC {
 		
 		((AbstractApplicationContext) ctx).close();
 		
-		
+		System.out.println(System.getProperties());
 
 	}//main
 }//class
