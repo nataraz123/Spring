@@ -1,0 +1,6 @@
+
+SQL> create table corona_patient(patId number(5) primary key,patName varchar2(15),age number(3),location varchar2(15),hospital varchar2(15));
+
+Table created.
+
+SQL> create sequence patId_seq start with 1 increment by 1;

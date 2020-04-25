@@ -14,12 +14,15 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.nt.command.PatientCommand;
 import com.nt.dto.PatientDTO;
 import com.nt.service.PatientMgmtService;
+import com.nt.validator.PatientCommandValidator;
 
 @Controller
 @SessionAttributes("patCmd")
 public class PatientOperationsController {
 	@Autowired
 	private PatientMgmtService service;
+	@Autowired
+	private PatientCommandValidator  validator;
 	
 	@ModelAttribute("patCmd")
 	public PatientCommand  getPatientCommand() {
@@ -42,6 +45,14 @@ public class PatientOperationsController {
 		System.out.println("PatientOperationsController.processForm()");
 		PatientDTO  dto=null;
 		String result=null;
+		
+		// call supports(-) ,validator(-) methods
+		if(validator.supports(PatientCommand.class)) {
+				  validator.validate(cmd, br);
+		       if(br.hasErrors())
+		    	   return "patient_registration";
+		}
+		
 		//convert cmd to  dto
 		dto=new PatientDTO();
 		BeanUtils.copyProperties(cmd, dto);
