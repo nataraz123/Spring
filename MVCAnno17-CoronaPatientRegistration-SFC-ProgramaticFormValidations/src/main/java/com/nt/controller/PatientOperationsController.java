@@ -17,7 +17,7 @@ import com.nt.service.PatientMgmtService;
 import com.nt.validator.PatientCommandValidator;
 
 @Controller
-@SessionAttributes("patCmd")
+//@SessionAttributes("patCmd")
 public class PatientOperationsController {
 	@Autowired
 	private PatientMgmtService service;

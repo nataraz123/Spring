@@ -5,6 +5,7 @@ public class PatientCommand {
 	private Integer age;
 	private String location;
 	private String hospital;
+	private String vflag="no";
 	
 	public PatientCommand() {
 		System.out.println("PatientCommand:: 0-param constructor");
@@ -33,6 +34,14 @@ public class PatientCommand {
 	}
 	public void setHospital(String hospital) {
 		this.hospital = hospital;
+	}
+
+	public String getVflag() {
+		return vflag;
+	}
+
+	public void setVflag(String vflag) {
+		this.vflag = vflag;
 	}
 
 }
