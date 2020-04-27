@@ -38,7 +38,7 @@ public class PatientOperationsController {
 		return "patient_registration";
 	}
 	
-	@PostMapping("/corona.htm")
+	@PostMapping("/corona.htm")   //for POST back request
 	public String  processForm(Map<String,Object> map,
 			                                              @ModelAttribute("patCmd") PatientCommand cmd,
 			                                              BindingResult br) {
@@ -46,11 +46,19 @@ public class PatientOperationsController {
 		PatientDTO  dto=null;
 		String result=null;
 		
+		
+		
 		// call supports(-) ,validator(-) methods
 		if(validator.supports(PatientCommand.class)) {
 				  validator.validate(cmd, br);
 		       if(br.hasErrors())
 		    	   return "patient_registration";
+		}
+		
+		//Application logic errors
+		if(cmd.getLocation().equalsIgnoreCase("hyd")) {
+			  br.rejectValue("location", "hyd.blocked");
+			  return  "patient_registration";
 		}
 		
 		//convert cmd to  dto
