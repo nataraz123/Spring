@@ -4,6 +4,7 @@
     
     <h1 style="color:red;text-align:center">Result page</h1>
     
-     <b>result is :::  ${resMsg} </b>  <br>
+     <b>result is :::  ${resMsg} </b> ,, ${sysDate } <br>
+     <b>result is :::  ${param.resMsg} </b>  <br>
      
      <a href="corona.htm">home</a>
