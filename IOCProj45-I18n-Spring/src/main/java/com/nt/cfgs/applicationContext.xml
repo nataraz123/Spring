@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
    <!--cfg Properties file  -->
-   <bean id="messageSource1"  class="org.springframework.context.support.ResourceBundleMessageSource">
+   <bean id="messageSource"  class="org.springframework.context.support.ResourceBundleMessageSource">
        <property name="basename"  value="com/nt/commons/App"/>
    </bean>
 
