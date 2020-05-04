@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<bean id="dobDt"  class="java.util.Date">
+        <property name="year"  value="110"/>
+        <property name="month" value="11"/>
+        <property name="date" value="20"/>
+   </bean>
+   
+   <bean id="cal"  class="java.util.Calendar" factory-method="getInstance"/>
+   
+   <bean id="crs"  class="com.nt.beans.Course">
+        <property name="courseId"  value="1001"/>
+        <property name="courseName" value="java"/>
+        <qualifier value="c1"/>
+   </bean>
+   
+   
+   <bean id="course1"  class="com.nt.beans.Course"  >
+        <property name="courseId"  value="1002"/>
+        <property name="courseName" value="spring"/>
+        <qualifier value="c2"/>
+   </bean>
+   
+   <bean id="stud"  class="com.nt.beans.Student">
+       <property name="sno"  value="1001"/>
+       <property name="sname" value="rakesh"/>
+     
+   </bean>
+       <context:annotation-config/>
+
+</beans>
