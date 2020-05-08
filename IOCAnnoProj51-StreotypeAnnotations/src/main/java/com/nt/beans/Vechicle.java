@@ -3,7 +3,7 @@ package com.nt.beans;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //@Component("vehicle")
@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 /*@PropertySource(value = "com/nt/commons/info.properties")
 @PropertySource(value = "com/nt/commons/info1.properties")*/
 @PropertySource(value = {"com/nt/commons/info1.properties","com/nt/commons/info.properties"})
+@Scope("singleton")
 public class Vechicle {
 	@Value("${vehicle.type}")
 	private String  type;
