@@ -1,0 +1,7 @@
+SQL> select * from userlist;
+
+UNAME           PWD
+---------------   ---------------
+raja                  rani
+king                 kingdom
+jani                   begum
