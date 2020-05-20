@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <!-- Service locator configuration.. -->
+    <bean  id="locator"   class="com.nt.locator.IccScoreCompServiceLocator"/>
+    
+    <!-- Local service class cfg -->
+    <bean id="cbService"  class="com.nt.service.CrickScoreCompServiceImpl">
+         <constructor-arg  ref="locator"/>  <!-- since ServiceLocator is Factory Bean... The resultant External comp ref will be injected-->
+    </bean>
+    
+    
+
+</beans>
