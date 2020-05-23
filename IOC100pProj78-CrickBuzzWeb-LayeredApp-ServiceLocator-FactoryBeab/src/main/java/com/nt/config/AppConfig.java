@@ -1,0 +1,11 @@
+package com.nt.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+//@ComponentScan(basePackages = {"com.nt.service","com.nt.locator"})
+@ComponentScan(basePackages ="com.nt")
+public class AppConfig {
+
+}
